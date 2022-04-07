@@ -8,7 +8,7 @@
 
 <div style="padding: 0 30px">
     <p class="ls__tle">Featured Today</p>
-    <div style="display: flex">
+    <div style="display: flex;width: 100%;overflow-x: scroll">
     {%  for movie in movieList %}
         <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
          <div class="mv__img">
@@ -24,7 +24,7 @@
      {% endfor %}
         </div>
     <p class="ls__tle">Top Rated</p>
-   <div style="display: flex">
+   <div style="display: flex;width: 100%;overflow-x: scroll">
     {%  for movie in topList %}
                 <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
 
@@ -42,7 +42,7 @@
         </div>
 
     <p class="ls__tle">In Theatres</p>
-   <div style="display: flex">
+   <div style="display: flex;width: 100%;overflow-x: scroll">
     {%  for movie in inTheatreList %}
                 <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
 
@@ -59,7 +59,7 @@
         </div>
 
     <p class="ls__tle">Coming soon</p>
-   <div style="display: flex">
+   <div style="display: flex;width: 100%;overflow-x: scroll">
     {%  for movie in comingList %}
                 <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
 

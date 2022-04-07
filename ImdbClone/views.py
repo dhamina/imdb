@@ -9,9 +9,9 @@ from .models import Movie
 def home(request):
     model = Movie
     movieData = Movie.objects.all()[:4]
-    topRated = Movie.objects.all().filter(rating__gt=7.9)[:4]
-    comingList = Movie.objects.all().filter(status='CS')[:4]
-    inTheatreList = Movie.objects.all().filter(status='IT')[:4]
+    topRated = Movie.objects.all().filter(rating__gt=7.9)
+    comingList = Movie.objects.all().filter(status='CS')
+    inTheatreList = Movie.objects.all().filter(status='IT')
     context = {
         'movieList': movieData,
         'topList': topRated,
