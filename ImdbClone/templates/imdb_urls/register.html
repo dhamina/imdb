@@ -1,0 +1,14 @@
+{% extends 'imdb_urls/header.html' %}
+{% block body_block %}
+<body>
+<h1>Registration to know world's exciting movies!</h1>
+    <form class="rs__cn" method="post" action="{% url 'imdb:register' %}">
+
+    {% csrf_token %}
+    {{ form }}
+
+        <input style="background-color: #f5c518;color:black;text-transform: uppercase;font-size:20px" type="submit" value="register">
+    </form>
+</body>
+</html>
+{% endblock %}

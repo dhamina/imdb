@@ -1,0 +1,85 @@
+{% extends 'imdb_urls/header.html' %}
+{% block body_block %}
+<body>
+
+<div>
+     <img class="banner"src="../../static/images/banner.jpeg" />
+</div>
+
+<div style="padding: 0 30px">
+    <p class="ls__tle">Featured Today</p>
+    <div style="display: flex">
+    {%  for movie in movieList %}
+        <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
+         <div class="mv__img">
+                  <img src={{ movie.imageURL }} />
+            <p> {{ movie.title }}</p>
+            <p style="display: flex;align-items: center">
+                            <img style="width:30px;"src="../../static/images/rat.png" />
+                            <span style="padding: 10px">{{ movie.rating }}</span>
+            </p>
+         </div>
+        </a>
+
+     {% endfor %}
+        </div>
+    <p class="ls__tle">Top Rated</p>
+   <div style="display: flex">
+    {%  for movie in topList %}
+                <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
+
+         <div class="mv__img">
+                  <img src={{ movie.imageURL }} />
+            <p> {{ movie.title }}</p>
+            <p style="display: flex;align-items: center">
+                            <img style="width:30px;"src="../../static/images/rat.png" />
+                            <span style="padding: 10px">{{ movie.rating }}</span>
+            </p>
+                 </div>
+                </a>
+
+     {% endfor %}
+        </div>
+
+    <p class="ls__tle">In Theatres</p>
+   <div style="display: flex">
+    {%  for movie in inTheatreList %}
+                <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
+
+         <div class="mv__img">
+                  <img src={{ movie.imageURL }} />
+            <p> {{ movie.title }}</p>
+            <p style="display: flex;align-items: center">
+                            <img style="width:30px;"src="../../static/images/rat.png" />
+                            <span style="padding: 10px">{{ movie.rating }}</span>
+            </p>
+                 </div>
+                </a>
+     {% endfor %}
+        </div>
+
+    <p class="ls__tle">Coming soon</p>
+   <div style="display: flex">
+    {%  for movie in comingList %}
+                <a style="color:white;text-decoration: none;" href="{% url 'imdb:detail' movie.id %}">
+
+         <div class="mv__img">
+                  <img src={{ movie.imageURL }} />
+            <p> {{ movie.title }}</p>
+            <p style="display: flex;align-items: center">
+                            <img style="width:30px;"src="../../static/images/rat.png" />
+                            <span style="padding: 10px">{{ movie.rating }}</span>
+            </p>
+                 </div>
+                </a>
+     {% endfor %}
+        </div>
+        </div>
+
+        </div>
+
+</div>
+
+</body>
+{% endblock %}
+

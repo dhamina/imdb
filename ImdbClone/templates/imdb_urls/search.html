@@ -1,0 +1,29 @@
+{% extends 'imdb_urls/header.html' %}
+{% block body_block %}
+<body>
+<div style="padding: 0 30px">
+<form  action="{% url 'imdb:search' %}">
+     <input style="width:74%;padding:10px;max-width:1000px;font-size: 18px" type="text"  name="search" placeholder="Search any movies"/>
+    <input style="width: 300px;height:64px;background-color: #f5c518" type="submit" value="Search">
+</form>
+</div>
+{% if search %}
+<div style="display: flex;flex-flow: wrap;padding:25px">
+        {%  for movie in results %}
+        <div class="mv__img">
+            <img src={{ movie.imageURL }} />
+                        <p> {{ movie.title}}</p>
+<p style="display: flex;align-items: center">
+                            <img style="width:30px;"src="../../static/images/rat.png" />
+                            <span style="padding: 10px">{{ movie.title }}</span>
+            </p>
+        </div>
+             {% empty %}
+
+   <h3>No results found.</h3>
+       {% endfor %}
+  {% endif %}
+</div>
+</body>
+{% endblock %}
+

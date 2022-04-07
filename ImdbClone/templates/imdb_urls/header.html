@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'imdb/style.css' %}"/>
+    <title> Imdb - {% block title %} Ratings, Reviews and where to watch movies! {% endblock %}</title>
+</head>
+<body class="cn">
+<div class="" >
+<div class="hd__cn">
+    <a href= "{% url 'imdb:home' %}">   <img class="logo" src="../../static/images/imdb1.webp"  /> </a>
+<div class="hd__l">
+        <p class="hd__txt"><a href= "{% url 'imdb:search' %}"> <img style="width:20px;padding-right:10px" src="../../static/images/search.png" /> </a> </p>
+{% if user.is_authenticated %}
+      <p class="hd__txt">Hi {{ user.username}}</p>
+      <p class=""><a href= "/logout"> Logout </a> </p>
+
+     {% else %}
+    <p class="hd__txt"><a href= "{% url 'imdb:register' %}"> Register </a> </p>
+        <p class=""><a href= "{% url 'imdb:login' %}"> SignIn </a> </p>
+     {% endif %}
+</div>
+
+</div>
+    {% block body_block %}*** {% endblock %}
+</div>
+<div>
+    <ul>
+{#        <li class="hbar1"><a href="http://127.0.0.1:8000/about/"> Find out about this site </a></li>#}
+{#        <li class="hbar1"><a href = "{% url 'imdb:index'%}"> Click here to return to main page </a><br/></li>#}
+
+{#        <li class="hbar1"><a href= "{% url 'imdb:logout' %}"> Logout </a> </li>#}
+    </ul>
+</div>
+</body>

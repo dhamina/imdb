@@ -1,0 +1,34 @@
+{% extends 'imdb_urls/header.html' %}
+{% block body_block %}
+<body>
+<h1>Login to know more about exciting movies!</h1>
+<form class="rs__cn" method="post">
+		{% csrf_token %}
+
+{#        {% if form.errors %}#}
+{#             {% for field in form %}#}
+{#           {% for error in field.errors %}#}
+{#              <div class="alert alert-danger">#}
+{#                   <strong>{{ error|escape }}</strong>#}
+{#              </div>#}
+{#           {% endfor %}#}
+{#       {% endfor %}#}
+{#            {% else %}#}
+{#            <p>Logged in Successfully</p>#}
+{#        {% endif %}#}
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+        {{ form }}
+
+        <input style="margin-top:30px;background-color: #f5c518;color:black;text-transform: uppercase;font-size:20px" type="submit" value="Login">
+
+    </form>
+</body>
+</html>
+{% endblock %}

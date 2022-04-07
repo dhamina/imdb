@@ -1,0 +1,20 @@
+{% extends 'imdb_urls/header.html' %}
+{% block body_block %}
+<body>
+<div style="padding: 0 30px">
+    <p class="ls__tle">{{ details.title }}</p>
+    <p> {{ details.desc }}</p>
+    <p> Genre: <span style="text-transform: capitalize"> {{ details.category }}</span>  </p>
+    <p>Director: <span>Matt Reeves</span></p>
+    <p>Stars: <span>Robert Pattinson, Zoe Kravitz</span></p>
+    <p style="display: flex;align-items: center">
+                           <span>Rating: </span> <img style="width:30px;"src="../../static/images/rat.png" />
+                            <span style="padding: 10px">{{ details.rating }}</span>
+    </p>
+    <iframe width="1200px" height="600px" src={{ details.videoURL }} frameborder="0" allowfullscreen/>
+
+
+</div>
+</body>
+{% endblock %}
+
